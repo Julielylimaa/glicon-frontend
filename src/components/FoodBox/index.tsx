@@ -18,7 +18,7 @@ const alimentos = [
 
 ];
 
-const colorCHO = (cho: number) => {
+export const colorCHO = (cho: number) => {
     let borderColor
     let bgColor
     let textColor
@@ -55,9 +55,11 @@ export interface FoodItem {
 
 export function FoodBox(){
     const addFood = useCartStore()
+    const foods = useCartStore((state)=> state.products)
 
     const handlePlusPress = (item: FoodItem) => {
         addFood.add(item)
+        console.log(foods)
     };
 
     return(

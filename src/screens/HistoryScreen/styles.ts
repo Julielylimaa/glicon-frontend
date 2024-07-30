@@ -1,13 +1,13 @@
-import theme from "@theme/index";
-import { ArrowUUpLeft } from "phosphor-react-native";
-import styled from "styled-components/native";
+import { PlusIcon } from '@components/FoodBox/styles'
+import theme from '@theme/index'
+import styled from 'styled-components/native'
 
 export const Container = styled.View`
     flex:1;
+    background-color:${theme.COLORS.WHITE};
     align-items: center;
     justify-content: center;
-`
-
+    `
 
 export const Title = styled.Text`
     color: ${theme.COLORS.WHITE};
@@ -15,17 +15,7 @@ export const Title = styled.Text`
     font-family: ${theme.FONT_FAMILY.BOLD};
 `
 
-export const List = styled.View`
-    width: 100%;
-    height: 70%;
-    flex-direction: column;
-    position: absolute;
-    bottom: 0;
-
-    background-color: #F7F5FA;
-
-`
-export const ButtonGoBack = styled.TouchableOpacity`
+export const ButtonAdd= styled.TouchableOpacity`
 width: 55px;
 height: 55px;
 left: 80%;
@@ -37,9 +27,8 @@ justify-content: center;
 background-color: ${theme.COLORS.DARK_PURPLE};
 `
 
-export const GoBack = styled(ArrowUUpLeft).attrs(()=> ({
-    size: 36,
+export const Add= styled(PlusIcon).attrs(()=> ({
+    size: 20,
     color: theme.COLORS.WHITE,
 
 }))``
-

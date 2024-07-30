@@ -1,11 +1,10 @@
 import { ActivityIndicator } from "react-native"
 import { ThemeProvider } from "styled-components"
-import { FoodList } from "@screens/FoodList"
+
 
 import theme from "@theme/index"
 import { useFonts, RobotoCondensed_400Regular, RobotoCondensed_700Bold } from "@expo-google-fonts/roboto-condensed"
-import { StatusBar } from "expo-status-bar"
-import { FoodCount } from "@screens/FoodCount"
+import { ListRoutes } from "@routes/app.routes"
 
 export default function HomeScreen() {
   const [fontsLoaded] = useFonts({RobotoCondensed_400Regular, RobotoCondensed_700Bold})
@@ -13,9 +12,9 @@ export default function HomeScreen() {
 
 
   return (
-    <ThemeProvider theme={theme}>
-      <StatusBar/>
-      { fontsLoaded ? <FoodList/> : <ActivityIndicator/> }
+    <ThemeProvider  theme={theme}>
+      {/* <StatusBar/> */}
+      { fontsLoaded ? <ListRoutes/> : <ActivityIndicator/> }
     </ThemeProvider>
     
   )}

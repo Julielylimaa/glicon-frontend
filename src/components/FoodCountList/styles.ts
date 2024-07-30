@@ -1,7 +1,7 @@
 import theme from "@theme/index";
 import styled from "styled-components/native";
 
-import { Plus } from "phosphor-react-native";
+import { Trash } from "phosphor-react-native";
 
 export const Container = styled.View`
     width: 100%;
@@ -60,14 +60,14 @@ export const FoodDescription = styled.Text`
     margin-top: 2px;
 `
 
-export const PlusIcon = styled(Plus).attrs(()=>({
+export const DeleteIcon = styled(Trash).attrs(()=>({
     size: 15,
     color: theme.COLORS.DARK_GRAY,
     weight: 'bold'
 }))`
 `
 
-export const PlusButton = styled.TouchableOpacity`
+export const DeleteButton = styled.TouchableOpacity`
     width: 20px;
     height: 25px;
     position: absolute;
