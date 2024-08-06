@@ -1,9 +1,7 @@
 import { HistoryItem } from "@components/HistoryBox";
 import { create } from "zustand";
 
-export type HistoryProps = HistoryItem & {
-    quantidade: number
-}
+export type HistoryProps = HistoryItem 
 
 type StateProps = {
     historyList: HistoryProps[]
@@ -18,13 +16,13 @@ export const useHistoryList = create<StateProps>((set) => ({
         if (existinghistory) {
             return {
                 historyList: state.historyList.map(p =>
-                    p.id === history.id ? { ...p, quantidade: p.quantidade + 1 } : p
+                    p.id === history.id ? { ...p} : p
                     
                 )
                 
             }
         }
         //console.log(...state.historyList)
-        return { historyList: [...state.historyList, { ...history, quantidade: 1 }] }
+        return { historyList: [...state.historyList, { ...history}] }
     }),
 }));

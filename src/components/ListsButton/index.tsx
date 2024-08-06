@@ -1,12 +1,16 @@
-import { SubmitButton } from "@components/HistoryInput/styles";
-import { Container } from "./styles";
+import { Container, TextButton, SubmitButton } from "./styles";
 
+type Props = {
+    text: string,
+    onPress: ()=> void,
+    
+}
 
-export function ListsButton(){
+export function ListsButton({text, onPress}: Props){
     return(
 
-        <Container>
-            <SubmitButton></SubmitButton>
+        <Container >
+            <SubmitButton onPress={onPress}><TextButton>{text}</TextButton></SubmitButton>
         </Container>
     )
 }

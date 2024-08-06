@@ -1,10 +1,11 @@
 import { ScrollView, Text } from "react-native";
-import { Container, Input, InputBox, Label, SubmitButton, TextButton, Title} from "./styles";
+import { ButtonContainer, Container, Input, InputBox, Label} from "./styles";
 
 
 import theme from "@theme/index";
-import { useAddHistory } from "src/history/AddHistory";
-import { useHistoryList } from "src/history/historyList";
+import { useAddHistory } from "src/historyState/AddHistory";
+import { useHistoryList } from "src/historyState/historyList";
+import { ListsButton } from "@components/ListsButton";
 
 export function HistoryInput(){
     const { title, setTitle, description, setDescription, value, setValue, time, setTime, resetFields  } = useAddHistory()
@@ -23,9 +24,10 @@ export function HistoryInput(){
         resetFields()
     }
     return(
+        <>
         <Container>
             <ScrollView style={{ flex: 1, width: '100%'}} 
-            contentContainerStyle={{ paddingBottom: 25}}
+            contentContainerStyle={{ paddingBottom: 20}}
             >
             <InputBox>
                 <Label>Registro</Label>
@@ -59,6 +61,7 @@ export function HistoryInput(){
             <InputBox>
                 <Label>Horário</Label>
                 <Input 
+                keyboardType="numeric"
                 placeholder="Horário da medição" 
                 placeholderTextColor="gray"
                 value={time}
@@ -66,8 +69,13 @@ export function HistoryInput(){
                 />
             </InputBox>
             </ScrollView>
-            <SubmitButton onPress={handleSubmit}><TextButton>Adicionar Registro</TextButton></SubmitButton>
 
         </Container>
+            <ButtonContainer>
+                <ListsButton text={"Adicionar Registro"} onPress={handleSubmit}></ListsButton>
+            </ButtonContainer>
+ 
+
+        </>
     )
 }

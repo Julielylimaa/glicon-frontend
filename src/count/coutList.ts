@@ -8,6 +8,8 @@ export type ProductCartProps = FoodItem & {
 type StateProps = {
     products: ProductCartProps[]
     add: (product: FoodItem) => void
+    remove: (product: ProductCartProps) => void
+    increment: (product: ProductCartProps) => void
 }
 
 export const useCartStore = create<StateProps>((set) => ({
@@ -27,4 +29,26 @@ export const useCartStore = create<StateProps>((set) => ({
         //console.log(...state.products)
         return { products: [...state.products, { ...product, quantidade: 1 }] }
     }),
-}));
+    remove: (product: ProductCartProps) => set((state) => {
+        const qtd = product.quantidade
+        if(qtd > 1){
+           return {
+            products: state.products.map(p =>
+                p.id === product.id ? { ...p, quantidade: p.quantidade - 1 } : p
+                )
+            } 
+        }
+        return { products: [...state.products] }
+    }),
+
+    increment: (product: ProductCartProps) => set((state) => {
+        
+        return {
+            products: state.products.map(p =>
+                p.id === product.id ? { ...p, quantidade: p.quantidade + 1 } : p
+            )
+        } 
+        
+    })
+}
+));

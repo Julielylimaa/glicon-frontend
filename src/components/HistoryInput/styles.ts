@@ -3,8 +3,9 @@ import theme from "@theme/index";
 
 export const Container = styled.View`
     position: absolute;
+    top: 0;
     width: 100%;
-    height: 100%;
+    height: 80%;
     align-items: flex-start;
     padding-left: 5%;
     padding-right: 5%;
@@ -40,23 +41,8 @@ export const Label = styled.Text`
     font-family: ${theme.FONT_FAMILY.REGULAR};
 `
 
-export const SubmitButton = styled.TouchableOpacity`
-    margin-top: 5%;
-    margin-bottom: 5%;
-    background-color: ${theme.COLORS.PURPLE};
-    border-radius: 5px;
-    justify-content: center;
+export const ButtonContainer = styled.View`
     width: 100%;
-    height: 65px;
-    font-size: 16px;
-    align-items: center;
+    bottom: -40%;
     position: fixed;
-    
-    box-shadow: 0px 2px 20px rgba(100, 100, 111, 0.1); 
-`
-
-export const TextButton = styled.Text`
-    color: ${theme.COLORS.WHITE};
-    font-family: ${theme.FONT_FAMILY.BOLD};
-    font-size: ${theme.FONT_SIZE.MD}px;
 `

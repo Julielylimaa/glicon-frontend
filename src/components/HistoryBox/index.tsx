@@ -1,6 +1,6 @@
 import { FlatList } from "react-native"
 import {Title,LeftView, Box, Container, RightView, DateText, Description, HistoryContainer, HourText, ValueBox, ValueText, DeleteButton, DeleteIcon } from "./styles"
-import { useHistoryList } from "src/history/historyList";
+import { useHistoryList } from "src/historyState/historyList";
 
 
 

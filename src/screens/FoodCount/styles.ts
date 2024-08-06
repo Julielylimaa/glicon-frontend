@@ -43,3 +43,21 @@ export const GoBack = styled(ArrowUUpLeft).attrs(()=> ({
 
 }))``
 
+export const ButtonContainer = styled.View`
+    width: 100%;
+    bottom: -87%;
+    position: fixed;
+`
+
+export const ModalContainer = styled.View`
+    background-color: white;
+    width: 80%;
+    
+    
+`
+export const CenterView = styled.View`
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin-top: 22px;
+`
